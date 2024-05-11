@@ -1,1 +1,9 @@
-<p>recepie-edit works!</p>
+<a href="#" class="list-group-item clearfix"  (click)="onSelected()">
+    <ul class="pull-left">
+        <h4 class="list-group-item-heading">{{recepie.name}}</h4>
+        <p class="list-group-item-text">{{recepie.discription}}</p>
+    </ul>
+    <span class="pull-right">
+        <img [src]="recepie.imagePath" alt="{{recepie.name}}" class="img-responsive" style="max-width: 100px;">
+    </span>
+</a>
