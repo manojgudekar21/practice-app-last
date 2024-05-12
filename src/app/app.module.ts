@@ -10,6 +10,8 @@ import { RecepieListComponent } from './recepies/recepie-list/recepie-list.compo
 import { RecepieDetailsComponent } from './recepies/recepie-details/recepie-details.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecepieEditComponent } from './recepies/recepie-list/recepie-edit/recepie-edit.component';
+import { FormsModule } from '@angular/forms';
+import { OpenmenuDirective } from './shared/openmenu.directive';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { RecepieEditComponent } from './recepies/recepie-list/recepie-edit/recep
     RecepieListComponent,
     RecepieDetailsComponent,
     ShoppingEditComponent,
-    RecepieEditComponent
+    RecepieEditComponent,
+    OpenmenuDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,10 +5,10 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#">
+        <a href="#" appOpenmenu>
             <button class="dropdown-toggle">Manage <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li>To Shopping List</li>
+                <li (click)="toShoppingList()">To Shopping List</li>
             </ul>
         </a>
     </div>
@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
-        Recepie Ingridents
+    <div class="col-xs-12" *ngFor="let ingrident of recepie.ingridents">
+        {{ingrident.ingrident}} ({{ingrident.amount}})
     </div>
 </div>

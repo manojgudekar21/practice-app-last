@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recepie } from 'src/app/shared/recepie.model';
+import { RecepieService } from 'src/app/shared/recepie.service';
 
 @Component({
   selector: 'app-recepie-edit',
@@ -9,15 +10,14 @@ import { Recepie } from 'src/app/shared/recepie.model';
 export class RecepieEditComponent implements OnInit {
 
   @Input() recepie:Recepie;
-  @Output() onSelectedRecepie = new EventEmitter<void>();
   
-  constructor() { }
+  constructor(private recepieService:RecepieService) { }
 
   ngOnInit(): void {
   }
 
   onSelected(){
-    this.onSelectedRecepie.emit();
+    this.recepieService.selectedRecepie.emit(this.recepie)
   }
 
 }

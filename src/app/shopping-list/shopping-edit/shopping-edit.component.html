@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="col-xs-10">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required #nameInput>
                     <label for="amount">Amount</label>
-                    <input type="number" name="amount" id="amount" required>
+                    <input type="number" name="amount" id="amount" required #amountInput>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-10">
-                    <button class="btn btn-success">Add</button>
+                    <button class="btn btn-success" (click)="onAdd()">Add</button>
                     <button class="btn btn-danger">Delete</button>
                     <button class="btn btn-primary">Clear</button>
                 </div>
