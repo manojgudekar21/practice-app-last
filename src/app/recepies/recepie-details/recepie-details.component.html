@@ -5,10 +5,12 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" appOpenmenu>
+        <a appOpenmenu>
             <button class="dropdown-toggle">Manage <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li (click)="toShoppingList()">To Shopping List</li>
+                <li style="cursor: pointer;" (click)="toShoppingList()"><a>To Shopping List</a></li>
+                <li style="cursor: pointer;" (click)="onEdit()"><a>To Edit</a></li>
+                <li style="cursor: pointer;" (click)="onDelete()"><a>Delete</a></li>
             </ul>
         </a>
     </div>

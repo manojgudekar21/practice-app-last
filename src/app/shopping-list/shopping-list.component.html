@@ -5,8 +5,11 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a class="list-group-item clearfix" *ngFor="let ingrident of ingridents">
-            <p>{{ingrident.ingrident}} ({{ingrident.amount}})</p>
+        <a class="list-group-item clearfix" 
+        style="cursor: pointer;"
+        *ngFor="let ingrident of ingridents;let i = index"
+        (click)="onSelect(i)">
+            {{ingrident.ingrident}} ({{ingrident.amount}})
         </a>
     </div>
 </div>

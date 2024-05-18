@@ -1,12 +1,14 @@
 <div class="row">
     <div class="col-xs-12">
-        <button class="btn btn-success">Add Recepie</button>
+        <button class="btn btn-success" (click)="newRecepie()">Add Recepie</button>
     </div>
 </div>
 <br>
-<div class="row">
+<div class="row" style="cursor: pointer;">
     <div class="col-xs-12">
-        <app-recepie-edit [recepie]="elRecepie" *ngFor="let elRecepie of recepies" 
+        <app-recepie-edit [recepie]="elRecepie" 
+        *ngFor="let elRecepie of recepies;let i = index" 
+        [index]="i" 
         ></app-recepie-edit>
     </div>
 </div>
