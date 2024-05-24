@@ -1,41 +1,40 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecepiesComponent } from './recepies/recepies.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { RecepieListComponent } from './recepies/recepie-list/recepie-list.component';
-import { RecepieDetailsComponent } from './recepies/recepie-details/recepie-details.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { RecepieEditComponent } from './recepies/recepie-list/recepie-edit/recepie-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OpenmenuDirective } from './shared/openmenu.directive';
-import { StartComponent } from './recepies/start/start.component';
-import { EditComponent } from './recepies/edit/edit.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptors } from './auth/auth-interceptors.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { RecepiesModule } from './recepies/recepies.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecepiesComponent,
-    ShoppingListComponent,
-    RecepieListComponent,
-    RecepieDetailsComponent,
-    ShoppingEditComponent,
-    RecepieEditComponent,
     OpenmenuDirective,
-    StartComponent,
-    EditComponent
+    AuthComponent,
+    LoadingSpinnerComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    HttpClientModule,
+    RecepiesModule,
+    ShoppingListModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptors,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
